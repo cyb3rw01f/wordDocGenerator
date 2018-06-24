@@ -11,7 +11,7 @@ Script generates a Microsoft Word document containing a maco. The macro vba code
 
 .Notes
 ############################################################
-Macro enabled Wod Document generater requirs Microsoft Word 
+Macro enabled Wod Document generater requiers Microsoft Word 
 ############################################################
 I developed this script to assist testing security controls ability to detect/alert on Word documents containing macros. 
 
