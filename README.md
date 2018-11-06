@@ -2,7 +2,7 @@
 PowerShell script that generates a Word document containing a macro. 
 
 Author of wordDocGenerator script @cyberw01f
-Last updated 6/24/2018
+Last updated 11/05/2018
 
 .SYNOPSIS 
 This file is for testing purposes only. Malicious use of this script is prohibitted. 
