@@ -143,7 +143,7 @@ $selection.font.size = 11
 $selection.font.bold = 0
 #####################################################################################
 # If you prefer random characters instead of Lorem Ipsum text uncomment this #$data 
-# ans place a # next to {xml}$tmpdata
+# and place a # next to {xml}$tmpdata
 #####################################################################################
 #$data = Get-RandomAlphaNum 1000
 [xml]$tmpdata = (new-object net.webclient).DownloadString("http://www.lipsum.com/feed/xml?amount=10&what=paras&start=yes&quot;")
