@@ -1,20 +1,20 @@
 <#                             
 Author of wordDocGenerator script @cyberw01f
-Last updated 6/24/2018
+Last updated 11/05/2018
 
 .SYNOPSIS 
 This file is for testing purposes only. 
 Malicious use of this script is forbidden!!
 
 .DESCRIPTION
-Script generates a Microsoft Word document containing a maco. The macro vba code can be customzed. 
+Script generates a Microsoft Word document containing a macro. The macro vba code can be customzed. 
 
 .Notes
 ############################################################
 Macro enabled Wod Document generater requiers Microsoft Word 
+Currently this script relies on Word already installed on the system the script will be ran on.
 ############################################################
 I developed this script to assist testing security controls ability to detect/alert on Word documents containing macros. 
-
 #>
 
 #nl var simply does a carrage return / new line
