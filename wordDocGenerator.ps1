@@ -1,6 +1,6 @@
 <#                             
 Author of wordDocGenerator script @cyberw01f
-Last updated 11/05/2018
+Last updated 05/14/2020
 
 .SYNOPSIS 
 This file is for testing purposes only. 
@@ -14,7 +14,7 @@ Script generates a Microsoft Word document containing a macro. The macro vba cod
 Macro enabled Wod Document generater requiers Microsoft Word 
 Currently this script relies on Word already installed on the system the script will be ran on.
 ############################################################
-I developed this script to assist testing security controls ability to detect/alert on Word documents containing macros. 
+This script was developed to assist testing a security controls ability to detect/alert on Word documents containing macros. 
 #>
 
 #nl var simply does a carrage return / new line
@@ -22,65 +22,14 @@ $nl = [Environment]::NewLine
 
 $logo = @"
 	=================================================================
-				   _                         ___  _  __ 
+				       _                         ___  _  __ 
 			 ___ _   _| |__   ___ _ ____      __/ _ \/ |/ _|
 			/ __| | | | '_ \ / _ \ '__\ \ /\ / / | | | | |_ 
-		        | (__| |_| | |_) |  __/ |   \ V  V /| |_| | |  _|
+		   | (__| |_| | |_) |  __/ |   \ V  V /| |_| | |  _|
 			\___|\__, |_.__/ \___|_|    \_/\_/  \___/|_|_|  
-				|___/                                      
+				  |___/                                      
 		
 	==================================================================
-		 ,%#((%                                             %%%%%.                  
-		%(%%,#%((%                                       %%%%%,&%%%               
-		&(#(    /(&%%                                   &%%&*    #%%&              
-		%%%*       .&%%#                               %%%&        #&%%                 
-		,%%%          ,&%%                             %%%,          &%%               
-		%%%             %%%,                         ,%%%             %%%                          
-		%%%              %%%*                       *%%%              &%%                            
-		,%%,         /%%#  %%%                       %%&  #%%/         ,%%,                           
-		#%%           &%%.  %#%&&%%%%%%%%%%%%%%%&%%&%%%  /%%%           %%(                           
-		(%%            %%%  .%%%&%*.       .*#&%&%%%.  %%%            %%(;)                              
-		,%%*            %%%  %%%                   %&&  %%%            *%%                               
-		%%%            %&%                             &%&            &%%                                  
-	       &%%                                                           %%&                                    
-	       *%%%                                                         %%%                                      
-		%%%                                                         %%%                                       
-		 &%%                                                       &%%                                         
-		 .%%%                                                     %%%.                                          
-		  ,%%%                                                   %%%.                                            
-		   %%%                                                   %%%                                            
-		 .%%%                                                  %%%.                                            
-		,&%%      .%%%%%%%%%%%#            *&(%%(%(%%%&.      %%%,                                            
-		%%%       %%%%%%%%%%%%%&/         /((&(&(%((%%%%%       %%%                                            
-	       %%%              &%%&%%%%%&       &%&((((((&              %%%                                            
-	      %(&.                &%%%,%%%       %%%,%%%%                 %%%                                           
-	     %#(                   %%%           %%%                      %%%                                           
-	    #%%                    %%%           %%%                       &%&                                         
-	   &%%                     %%%           %%%                       %%%                                         
-	   %%(                     %%%           &%%                       %%%                                         
-	  ,%%,                     %%&           %%%                       (%%,                                        
-	   %%%%                                                             %%%%                                         
-	    &%%.                                                         .%%%                                           
-	     %%%%               %%%    #%%%%%%%%%#    %%%               %%%%                                            
-	     ,%%%              %#%/  %%&/.....(%%%  /%%%              &%%,                                             
-	       &%%              %%%   %%%     %%%   %%&              %%%                                               
-		&%%              &%%  ,%%&,,,%&%,  %%%              %%%                                                
-		 %%%  ,&,         %%%  .&%%%&%&.  &%%         ,&,  &%%                                                     
-		 .%%%%%%%%        ,%%%           %%%,        (%%%%%%%.                                                 
-		  *(*  .%%%        /%%%%%%%%%%%%%%&.        (%%.  /&(                                                     
-			%%%             #&&&&&&&&          %%%                                                           
-			  %%%                             %%%                                                           
-			   &%%                           %#%                                                             
-			   %%%(  (%%               #((  /%%/ 
-                             %%&%%%%%&             %%%%%%%%%                                                           												%%&%%%%%&             %%%%%%%%%                                                             
-			      *%%(   %%         %%%%   (%%*                                                            
-				     #%%%       &%%#                                                                   
-				      %%&     %%%                                                                     					   %%%   %%%                                                                     
-				        %%% %%%                                                                     
-				         %%%%%                                                                     
-				         #%%%#                                                                    						  %%&                                                                    
-				           . 
-				      @cyberw01f
 "@
 
 $label = @"  
@@ -159,7 +108,7 @@ $docmodule.CodeModule.AddFromString($code)
 $doc.SaveAs("$($ENV:UserProfile)\Desktop\$docName", [microsoft.office.interop.word.WdSaveFormat]::wdFormatDocument97)
 $word.Quit()
 [System.Runtime.Interopservices.Marshal]::ReleaseComObject($word) | out-null
-if (ps winword){kill -name winword}
+if (Get-Process winword){Stop-Process -name winword}
 #####################################################################################
 # Document will be saved to the curent users desktop
 #####################################################################################

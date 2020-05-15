@@ -1,15 +1,24 @@
 # wordDocGenerator
-PowerShell script that generates a Word document containing a macro. 
+PowerShell script that will generate an Word document that contains a macro. 
 
-Author of wordDocGenerator script @cyberw01f
-Last updated 11/05/2018
+Author @cyberw01f  
+Last updated: 05/14/2020  
 
-.SYNOPSIS 
-This file is for testing purposes only. Malicious use of this script is prohibitted. 
+## SYNOPSIS 
+This file is for security control testing purposes or malware analysis research only. Malicious use of this script is prohibitted.  
 
-.DESCRIPTION
-Script generates a Microsoft Word document containing a maco. The macro vba code can be customzed. 
+## DESCRIPTION
+Script generates a Microsoft Word document containing a macro. The macro vba code can be customzed. Simply replace the informastion in the $code variable secion of the script.  
 
-.Notes
-I developed this script to assist testing security controls ability to detect/alert on Word documents containing macros. 
+Look for this section, $code = @" @" Just place your code between the @" and "@ section and execute the script to generate your word document file"  
 
+The PS1 script contains code that generates random data to insure each file generated is forensicly unique.  
+
+## Notes
+Macro enabled Word Document generater requires Microsoft Word to be installed on the syestem that the scipt will be executed.  
+
+Some anti malware programs detect the word file when its generated so you may need to supress detection while the script is in use.  
+
+## How to use wordDocGenerator
+To generate a Word document with a unique MD5sum simply execute the PS1 script.  
+PS C:\Users\cyb3rw01f\> .\wordDocGenerator.ps1
