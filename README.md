@@ -18,5 +18,4 @@ Some anti malware programs detect the word file when its generated so you may ne
 ## How to use wordDocGenerator
 To generate a Word document with a unique MD5sum simply execute the PS1 script.  
 
-PS C:\Users\cyb3rw01f\> .\wordDocGenerator.ps1  
-
+PS C:\Users\cyb3rw01f\\> .\wordDocGenerator.ps1  
