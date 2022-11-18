@@ -51,7 +51,14 @@ function New-MacroWordDoc(){
 # Sample VBA code was included as an example, feel free to replace it.
 ###############################################################################
 $code = @"
-
+'The included VBA code samplke uses a PowerShell encoded command to looks-up a compuetrs assigned ip default-gateway address and pings it 5 times. Ping results are displayed in a message box.
+Private Sub Document_Open()
+    strCommand = "Powershell -noprofile -windowstyle hidden -e JABnAGEAdABlACAAPQAgACgARwBlAHQALQB3AG0AaQBPAGIAagBlAGMAdAAgAFcAaQBuADMAMgBfAG4AZQB0AHcAbwByAGsAQQBkAGEAcAB0AGUAcgBDAG8AbgBmAGkAZwB1AHIAYQB0AGkAbwBuACAAfAAgAD8AewAkAF8ALgBJAFAARQBuAGEAYgBsAGUAZAB9ACkALgBEAGUAZgBhAHUAbAB0AEkAUABHAGEAdABlAHcAYQB5AA0ACgBwAGkAbgBnACAALQBuACAANQAgACQAZwBhAHQAZQA=" 
+    Set WshShell = CreateObject("WScript.Shell")
+    Set WshShellExec = WshShell.Exec(strCommand)
+    strOutput = WshShellExec.StdOut.ReadAll
+    MsgBox strOutput
+End Sub
 "@
 
 $date = Get-Date -format MM-dd-yyyy
